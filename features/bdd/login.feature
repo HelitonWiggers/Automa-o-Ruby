@@ -1,8 +1,22 @@
-#language: pt
+#language:pt
+Funcionalidade: Login
 
-Funcionalidade: Login com sucesso
+Cenario: Usuario deve ser autorizado
+    Dado digito as credencias na pagina teste
+    Quando eu faço login com "teste1", "123" e "teste"
+    Entao As credenciais ficam gravadas na pagina teste
 
-Cenario: Login com sucesso
-Dado ter acesso ao sistema
-Quando ele digitar as credencias validas
-Entao deve acessar o site com sucesso
+Cenario: Campo em branco
+    Dado digito as credencias na pagina teste
+    Quando eu faço login com "teste" e "123"
+    Entao Devo ver a mensagem "Existem campos em branco"
+
+Cenario: Campo em branco
+    Dado digito as credencias na pagina teste
+    Quando eu faço login com "teste1" e "teste"
+    Entao Devo ver a mensagem "Existem campos em branco"
+
+Cenario: Campo em branco
+    Dado digito as credencias na pagina teste
+    Quando eu faço login com "123" e "teste"
+    Entao Devo ver a mensagem "Existem campos em branco"
